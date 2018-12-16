@@ -114,6 +114,10 @@ public class Navigation extends AppCompatActivity
             startActivity(intent);
 
         }
+        else if(id == R.id.nav_fav){
+            Intent intent = new Intent(Navigation.this,Favorite.class);
+            startActivity(intent);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -154,10 +158,12 @@ public class Navigation extends AppCompatActivity
         String up = getResources().getString(R.string.up);
         String now = getResources().getString(R.string.now);
 
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mSectionsPagerAdapter.addFragment(new HomeFragment(),Home);
         mSectionsPagerAdapter.addFragment(new NowShowingFragment(),now);
         mSectionsPagerAdapter.addFragment(new UpcommingFragment(),up);
+
         viewPager.setAdapter(mSectionsPagerAdapter);
     }
 

@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hendrabratanata.moviecatalog">
 
+    <permission
+        android:name="com.hendrabratanata.moviecatalog.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.hendrabratanata.moviecatalog.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -27,12 +34,22 @@
             android:name=".Activity.Upcoming"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_upcoming"
-            android:theme="@style/FullscreenTheme"/>
+            android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".Activity.nowShow"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_nowShow"
-            android:theme="@style/FullscreenTheme"/>
+            android:theme="@style/FullscreenTheme" />
+
+        <provider
+            android:name=".Provider.provider"
+            android:authorities="com.hendrabratanata.moviecatalog"
+            android:exported="true"
+            android:readPermission="com.hendrabratanata.moviecatalog.READ_DATABASE"
+            android:writePermission="com.hendrabratanata.moviecatalog.WRITE_DATABASE" />
+
+        <activity android:name=".Activity.Favorite"
+           android:label="FAVORITE" ></activity>
     </application>
 
 </manifest>

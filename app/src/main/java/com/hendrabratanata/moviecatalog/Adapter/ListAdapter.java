@@ -1,6 +1,7 @@
 package com.hendrabratanata.moviecatalog.Adapter;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CategoryViewHo
 
     private Context context;
     private ArrayList<MovieItem> listMovie = new ArrayList<>();
+    Cursor cursorListMovie;
 
     public ListAdapter(Context context){
         this.context = context;
